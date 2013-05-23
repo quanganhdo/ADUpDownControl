@@ -1,9 +1,9 @@
 //
-//  CMUpDownControl.h
-//  CMTextStylePicker
+//  ADUpDownControl.m
 //
-//  Created by Chris Miles on 18/10/10.
+//  Originally by Chris Miles.
 //  Copyright (c) Chris Miles 2010.
+//  Adapted by Anh Do on 23 May 2013.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -26,7 +26,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CMUpDownControl : UIControl {
+@interface ADUpDownControl : UIControl {
 
 	BOOL _selected;
 	BOOL _topHalfSelected;

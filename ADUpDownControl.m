@@ -1,9 +1,9 @@
 //
-//  CMUpDownControl.m
-//  CMTextStylePicker
+//  ADUpDownControl.m
 //
-//  Created by Chris Miles on 18/10/10.
+//  Originally by Chris Miles.
 //  Copyright (c) Chris Miles 2010.
+//  Adapted by Anh Do on 23 May 2013.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -24,14 +24,14 @@
 //  THE SOFTWARE.
 //
 
-#import "CMUpDownControl.h"
+#import "ADUpDownControl.h"
 
 #define kCornerRadius	4.0
 #define kArrowWidth		10.0
 #define kArrowHeight	10.0
 
 
-@implementation CMUpDownControl
+@implementation ADUpDownControl
 
 @synthesize maximumAllowedValue, minimumAllowedValue, value;
 
