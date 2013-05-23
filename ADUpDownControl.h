@@ -33,9 +33,12 @@
 	BOOL _touchNeedsDisplay;
 }
 
-@property (nonatomic, assign)	NSInteger		maximumAllowedValue;
-@property (nonatomic, assign)	NSInteger		minimumAllowedValue;
+@property (nonatomic) float maximumAllowedValue;
+@property (nonatomic) float minimumAllowedValue;
 
-@property (nonatomic, assign)	NSInteger		value;
+@property (nonatomic) float value;
+@property (nonatomic) float step;
+
+@property (nonatomic) BOOL displaysUnit;
 
 @end

@@ -42,14 +42,14 @@
 	if (_topHalfSelected) {
 		// Attempt to increment value
 		if (value < maximumAllowedValue) {
-			value++;
+            value += step;
 			valueChanged = YES;
 		}
 	}
 	else {
 		// Attempt to decrement value
 		if (value > minimumAllowedValue) {
-			value--;
+            value -= step;
 			valueChanged = YES;
 		}
 	}
@@ -340,7 +340,7 @@
 	
 	
 	// Draw text
-	NSString *valueStr = [NSString stringWithFormat:@"%d", value];
+    NSString *valueStr = displaysUnit ? [NSString stringWithFormat:@"%.0f", value] : [NSString stringWithFormat:@"%.1f", value];
 	NSString *units = @"pt";
 	
 	[[UIColor colorWithRed:66.0/255.0 green:66.0/255.0 blue:66.0/255.0 alpha:1.0] set];
@@ -353,8 +353,13 @@
 	CGPoint valuePoint = CGPointMake(10.0, (bounds.size.height-valueSize.height)/2);
 	CGPoint unitsPoint = CGPointMake(valuePoint.x+valueSize.width+3.0, (valuePoint.y+valueSize.height)-unitsSize.height-5.0);
 	
-	[valueStr drawAtPoint:valuePoint forWidth:valueSize.width withFont:valueFont minFontSize:valueFont.pointSize actualFontSize:NULL lineBreakMode:UILineBreakModeClip baselineAdjustment:UIBaselineAdjustmentAlignBaselines];
-	[units drawAtPoint:unitsPoint forWidth:unitsSize.width withFont:unitsFont minFontSize:unitsFont.pointSize actualFontSize:NULL lineBreakMode:UILineBreakModeClip baselineAdjustment:UIBaselineAdjustmentAlignBaselines];
+    [valueStr drawAtPoint:valuePoint forWidth:valueSize.width withFont:valueFont minFontSize:valueFont.pointSize actualFontSize:NULL
+            lineBreakMode:UILineBreakModeClip baselineAdjustment:UIBaselineAdjustmentAlignBaselines];
+
+    if (!displaysUnit) return;
+
+    [units drawAtPoint:unitsPoint forWidth:unitsSize.width withFont:unitsFont minFontSize:unitsFont.pointSize actualFontSize:NULL
+         lineBreakMode:UILineBreakModeClip baselineAdjustment:UIBaselineAdjustmentAlignBaselines];
 }
 
 
